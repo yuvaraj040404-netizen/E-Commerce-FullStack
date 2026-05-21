@@ -1,0 +1,16 @@
+<div style="padding: 20px; border: 1px solid #cbd5e1; background: #f8fafc; border-radius: 6px; max-width: 500px; margin: 20px auto;">
+  <h3 style="margin-top: 0; color: #1e293b;">Add Inventory Stock Record</h3>
+  
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <input [(ngModel)]="newProduct.sku" placeholder="Stock Keeping Unit (SKU)" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+    <input [(ngModel)]="newProduct.name" placeholder="Product Name" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+    <textarea [(ngModel)]="newProduct.description" placeholder="Item Description" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; resize: vertical;"></textarea>
+    Initial Quantity: <input type="number" [(ngModel)]="newProduct.quantity" placeholder="Initial Quantity" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+    Price per Unit: <input type="number" [(ngModel)]="newProduct.price" placeholder="Price per Unit" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+    Low Stock Alert Threshold: <input type="number" [(ngModel)]="newProduct.lowStockThreshold" placeholder="Low Stock Alert Threshold" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+    
+    <button (click)="saveProduct()" style="padding: 10px; background-color: #10b981; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">
+      Commit to Database
+    </button>
+  </div>
+</div>

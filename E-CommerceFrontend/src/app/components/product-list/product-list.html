@@ -1,0 +1,30 @@
+<div style="padding: 20px; max-width: 1000px; margin: 0 auto; font-family: sans-serif;">
+  <h2 style="color: #1e293b;">E-Commerce Inventory Dashboard</h2>
+  
+  <table style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 15px;">
+    <thead>
+      <tr style="background-color: #0f172a; color: white;">
+        <th style="padding: 12px; border: 1px solid #cbd5e1;">SKU Barcode</th>
+        <th style="padding: 12px; border: 1px solid #cbd5e1;">Item Designation</th>
+        <th style="padding: 12px; border: 1px solid #cbd5e1;">Description</th>
+        <th style="padding: 12px; border: 1px solid #cbd5e1;">In Stock</th>
+        <th style="padding: 12px; border: 1px solid #cbd5e1;">Unit Value</th>
+        <th style="padding: 12px; border: 1px solid #cbd5e1;">Stock Alert</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products" style="border-bottom: 1px solid #e2e8f0;">
+        <td style="padding: 12px; font-family: monospace;">{{product.sku}}</td>
+        <td style="padding: 12px; font-weight: bold;">{{product.name}}</td>
+        <td style="padding: 12px; color: #64748b;">{{product.description}}</td>
+        <td style="padding: 12px;">{{product.quantity}} units</td>
+        <td style="padding: 12px;">${{product.price}}</td>
+        <td style="padding: 12px;">
+          <span [style.color]="product.quantity <= product.lowStockThreshold ? '#ef4444' : '#10b981'" style="font-weight: bold;">
+            {{ product.quantity <= product.lowStockThreshold ? 'CRITICAL LOW' : 'STABLE' }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
