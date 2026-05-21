@@ -23,14 +23,4 @@ Run this SQL script in your MySQL Workbench to set up the database and table:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS ecommerce_db;
-USE ecommerce_db;
 
-CREATE TABLE IF NOT EXISTS products (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    sku VARCHAR(100) NOT NULL UNIQUE,
-    name VARCHAR(255) NOT NULL,
-    description TEXT,
-    quantity INT DEFAULT 0,
-    price DECIMAL(10, 2) DEFAULT 0.00,
-    low_stock_threshold INT DEFAULT 10
-);
