@@ -5,7 +5,7 @@ import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZonelessChangeDetection(), // Stable zoneless configuration for Angular 21
+    provideZonelessChangeDetection(),
     provideRouter(routes),
     provideHttpClient(withFetch())
   ]
