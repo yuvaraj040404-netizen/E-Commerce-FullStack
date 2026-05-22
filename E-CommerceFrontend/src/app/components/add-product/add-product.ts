@@ -6,7 +6,7 @@ import { ProductService, Product } from '../../services/product';
 @Component({
   selector: 'app-add-product',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Required imports for modern Angular template forms
+  imports: [CommonModule, FormsModule], 
   templateUrl: './add-product.html',
   styleUrls: ['./add-product.css']
 })
